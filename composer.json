@@ -1,5 +1,5 @@
 {
-    "name": "izytechab/nette-neo4j-extension",
+    "name": "izytechAB/nette-neo4j-extension",
     "type": "nette-addon",
     "description": "Nette Neo4j compiler extension",
     "keywords": ["nette", "neo4j", "graph", "database", "extension"],
@@ -16,6 +16,6 @@
         "hirevoice/neo4jphp-ogm": "*"
     },
     "autoload": {
-        "psr-0": { "Bazo\\Extensions\\Neo4j": "" }
+        "psr-0": { "izytechAB\\Extensions\\Neo4j": "" }
     }
 }
