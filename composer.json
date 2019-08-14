@@ -3,7 +3,6 @@
     "type": "nette-addon",
     "description": "Nette Neo4j compiler extension",
     "keywords": ["nette", "neo4j", "graph", "database", "extension"],
-    "homepage": "https://github.com/bazo/nette-neo4j-extension",
     "authors": [
         {
             "name": "Martin Bažík",
