@@ -9,7 +9,7 @@ Instal via composer
 
 ```json
 "require": {
-		"bazo/nette-neo4j-extension": "@dev"
+		"izytechab/nette-neo4j-extension": "@dev"
     }
 ``` 
 
