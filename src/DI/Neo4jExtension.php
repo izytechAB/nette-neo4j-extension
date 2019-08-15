@@ -51,12 +51,13 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
 		$builder->addDefinition($this->prefix('client'))
 				->setClass('\Everyman\Neo4j\Client')
-				->setFactory('Bazo\Extensions\Neo4j\DI\Neo4jExtension::createNeo4jClient', array('@container', $config))
+				->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config])
 				->setAutowired(FALSE);
 
 		$builder->addDefinition($this->prefix('entityManager'))
 				->setClass('\HireVoice\Neo4j\EntityManager')
-				->setFactory('Bazo\Extensions\Neo4j\DI\Neo4jExtension::createEntityManager', array('@container', $config))
+                                ->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config])
+				//->setFactory('Bazo\Extensions\Neo4j\DI\Neo4jExtension::createEntityManager', array('@container', $config))
 				->setAutowired(FALSE);
 
 		$builder->addDefinition('entityManager')
