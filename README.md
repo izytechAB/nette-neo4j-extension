@@ -21,15 +21,14 @@ $configurator->onCompile[] = function($configurator, $compiler) {
 };
 ```
 
-configuration options in config.neon:
+config in common.neon
 
-```yaml
+extensions:
+        neo4j: izytechAB\neo4j\DI\Neo4jExtension
 neo4j:
-	host: localhost
-	port: 7474
-	cachePrefix: neo4j
-	metaDataCache: apc
-	proxyDir: %appDir%/models/proxies
-```
-
-enjoy!
+        host: neo4j
+        port: 7474
+        user: neo4j
+        password: neo4j
+        cachePrefix: neo4j
+        metaDataCache: apc
