@@ -46,7 +46,6 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 	public function loadConfiguration()
 	{
 		$builder = $this->getContainerBuilder();
-        \Tracy\Debugger::dump($this->getContainerBuilder());
 		$config = $this->getConfig($this->defaults);
 
 		$builder->addDefinition($this->prefix('client'))
