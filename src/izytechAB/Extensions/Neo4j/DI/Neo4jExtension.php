@@ -2,13 +2,14 @@
 namespace izytechAB\Extensions\Neo4j\DI;
 
 use Doctrine\Common\Annotations\AnnotationReader;
+use Nette\DI\CompilerExtension;
 
 /**
  * Description of Neo4jExtension
  *
  * @author Martin Bažík
  */
-class Neo4jExtension extends \Nette\DI\CompilerExtension
+class Neo4jExtension extends Nette\DI\CompilerExtension
 {
 
 	/** @var array */
