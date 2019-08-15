@@ -76,12 +76,15 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
 	public static function createEntityManager(\Nette\DI\Container $container, $config)
 	{
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(VENDOR_DIR . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Auto.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(VENDOR_DIR . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Entity.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(VENDOR_DIR . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Index.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(VENDOR_DIR . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToMany.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(VENDOR_DIR . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToOne.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(VENDOR_DIR . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Property.php');
+                /**
+                 * @todo Fix QD 
+                 */
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Auto.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Entity.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Index.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToMany.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToOne.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Property.php');
 
 		$metadataCacheClass = self::$cacheClassMap[$config['metaDataCache']];
 		$metadataCache = new $metadataCacheClass;
