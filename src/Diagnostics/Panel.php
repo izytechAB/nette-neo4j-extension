@@ -16,8 +16,10 @@ use Nette\Diagnostics\Debugger;
 /**
  * @author Martin Bazik <martin@bazo.sk>
  */
-class Panel extends Nette\Object implements Nette\Diagnostics\IBarPanel
+class Panel implements Nette\Diagnostics\IBarPanel
 {
+    	use \Nette\SmartObject;
+
 
 	/**
 	 * @var int
