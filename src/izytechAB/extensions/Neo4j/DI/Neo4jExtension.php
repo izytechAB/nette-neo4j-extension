@@ -3,20 +3,16 @@ declare(strict_types = 1);
 
 namespace izytechAB\Extensions\Neo4j\DI;
 
-use Nette;
-use Nette\DI;
-use Nette\Schema\Expect;
-use Nette\Schema\Schema;
-use Nette\Utils;
+use \Nette\DI\CompilerExtension;
 
-use Doctrine\Common\Annotations\AnnotationReader;
+use \Doctrine\Common\Annotations\AnnotationReader;
 
 /**
  * Description of Neo4jExtension
  *
  * @author Martin Bažík
  */
-final class Neo4jExtension extends DI\CompilerExtension
+final class Neo4jExtension extends CompilerExtension
 {
 
 	/** @var array */
