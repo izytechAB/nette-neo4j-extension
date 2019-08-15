@@ -9,15 +9,12 @@ Install via composer
 
 ```json
 "require": {
-		"izytechab/nette-neo4j-extension": "@dev"
+		"izytechab/nette-neo4j-extension": "dev-master"
     }
 ``` 
 
-register in bootstrap
-
-```
-
 config in common.neon
+
 ```
 extensions:
         neo4j: izytechAB\neo4j\DI\Neo4jExtension
