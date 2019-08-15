@@ -5,7 +5,7 @@ Neo4j extension for Nette Framework
 
 Provides configured entity manager from https://github.com/lphuberdeau/Neo4j-PHP-OGM and a debug panel
 
-Instal via composer
+Install via composer
 
 ```json
 "require": {

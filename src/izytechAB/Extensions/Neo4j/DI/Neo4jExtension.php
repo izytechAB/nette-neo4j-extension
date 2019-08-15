@@ -1,5 +1,4 @@
 <?php
-
 namespace izytechAB\Extensions\Neo4j\DI;
 
 use Doctrine\Common\Annotations\AnnotationReader;
