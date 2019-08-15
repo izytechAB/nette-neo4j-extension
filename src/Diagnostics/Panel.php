@@ -11,12 +11,13 @@ namespace izytechAB\neo4j\Diagnostics;
 use Everyman\Neo4j\Query;
 use HireVoice\Neo4j;
 use Nette;
-use Nette\Diagnostics\Debugger;
+use Tracy;
+
 
 /**
  * @author Martin Bazik <martin@bazo.sk>
  */
-class Panel implements Nette\Diagnostics\IBarPanel
+class Panel implements \Tracy\IBarPanel
 {
     	use \Nette\SmartObject;
 
