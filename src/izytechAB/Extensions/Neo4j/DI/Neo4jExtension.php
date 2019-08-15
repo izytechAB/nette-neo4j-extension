@@ -1,15 +1,22 @@
 <?php
+declare(strict_types = 1);
+
 namespace izytechAB\Extensions\Neo4j\DI;
 
+use Nette;
+use Nette\DI;
+use Nette\Schema\Expect;
+use Nette\Schema\Schema;
+use Nette\Utils;
+
 use Doctrine\Common\Annotations\AnnotationReader;
-use Nette\DI\CompilerExtension;
 
 /**
  * Description of Neo4jExtension
  *
  * @author Martin Bažík
  */
-class Neo4jExtension extends Nette\DI\CompilerExtension
+final class Neo4jExtension extends DI\CompilerExtension
 {
 
 	/** @var array */
