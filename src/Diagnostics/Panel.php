@@ -1,12 +1,12 @@
 <?php
-
 /**
  * Copyright (c) 2012 Martin Bazik <martin@bazo.sk>
  *
  * For the full copyright and license information, please view the file license.txt that was distributed with this source code.
  */
 
-namespace Bazo\Extensions\Neo4j\Diagnostics;
+//namespace Bazo\Extensions\Neo4j\Diagnostics;
+namespace izytechAB\neo4j\Diagnostics;
 
 use Everyman\Neo4j\Query;
 use HireVoice\Neo4j;
