@@ -1,9 +1,9 @@
 nette-neo4j-extension
 =====================
 
-Neo4j extension for Nette Framework
+Neo4j extension for Nette Framework. Provides configured entity manager from https://github.com/lphuberdeau/Neo4j-PHP-OGM and a debug panel.
+Forked from https://github.com/bazo/nette-neo4j-extension. Updatade to run with Nette 3
 
-Provides configured entity manager from https://github.com/lphuberdeau/Neo4j-PHP-OGM and a debug panel
 
 Install via composer
 
@@ -15,14 +15,10 @@ Install via composer
 
 register in bootstrap
 
-```php
-$configurator->onCompile[] = function($configurator, $compiler) {
-		$compiler->addExtension('neo4j', new \Bazo\Extensions\Neo4j\DI\Neo4jExtension);
-};
 ```
 
 config in common.neon
-
+```
 extensions:
         neo4j: izytechAB\neo4j\DI\Neo4jExtension
 neo4j:
@@ -32,3 +28,4 @@ neo4j:
         password: neo4j
         cachePrefix: neo4j
         metaDataCache: apc
+```
