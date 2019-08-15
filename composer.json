@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": { 
-            "izytechAB\\Extensions\\Neo4j\\": "src/" 
+            "izytechAB\\neo4j\\": "src/" 
         }
 
     }

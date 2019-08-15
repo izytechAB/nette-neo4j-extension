@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace izytechAB\Extensions\Neo4j\DI;
+namespace izytechAB\neo4j\DI;
 
 use \Nette\DI\CompilerExtension;
 
@@ -12,7 +12,7 @@ use \Doctrine\Common\Annotations\AnnotationReader;
  *
  * @author Martin Bažík
  */
-class Neo4jExtension extends CompilerExtension
+class Neo4jExtension extends \Nette\DI\CompilerExtension
 {
 
 	/** @var array */
