@@ -137,7 +137,7 @@ class Panel implements \Tracy\IBarPanel
 	}
 
 	/**
-         * @return izytechAB\neo4j\DiagnosticsPanel
+         * @return \izytechAB\neo4j\DiagnosticsPanel
 	 */
 	public static function register()
 	{
