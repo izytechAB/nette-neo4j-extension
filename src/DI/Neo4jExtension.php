@@ -12,7 +12,7 @@ use \Doctrine\Common\Annotations\AnnotationReader;
  *
  * @author Martin Bažík
  */
-final class Neo4jExtension extends CompilerExtension
+class Neo4jExtension extends CompilerExtension
 {
 
 	/** @var array */
