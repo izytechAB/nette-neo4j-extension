@@ -16,7 +16,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 {
 
 	/** @var array */
-	public $defaults = array(
+	public $defaults = [
 		'host' => 'localhost',
 		'port' => 7474,
 		'cachePrefix' => 'neo4j',
@@ -24,11 +24,13 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 		'proxyDir' => '%appDir%/models/proxies',
 		'debug' => false,
 		'username' => null,
-		'password' => null
-	);
+		'password' => null,
+                'vendorDir' => null
+            
+	];
 	
 	/** @var array */
-	private static $cacheClassMap = array(
+	private static $cacheClassMap = [
 		'array' => '\Doctrine\Common\Cache\ArrayCache',
 		'apc' => '\Doctrine\Common\Cache\ApcCache',
 		'filesystem' => '\Doctrine\Common\Cache\FilesystemCache',
@@ -36,7 +38,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 		'winCache' => '\Doctrine\Common\Cache\WinCacheCache',
 		'xcache' => '\Doctrine\Common\Cache\XcacheCache',
 		'zendData' => '\Doctrine\Common\Cache\ZendDataCache'
-	);
+	];
 
 	/**
 	 * Processes configuration data
@@ -75,15 +77,18 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
 	public static function createEntityManager(\Nette\DI\Container $container, $config)
 	{
+            
                 /**
                  * @todo Fix QD 
                  */
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Auto.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Entity.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Index.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToMany.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToOne.php');
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(__DIR__ . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Property.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config->vendorDir . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Auto.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config->vendorDir . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Entity.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config->vendorDir .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Index.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config->vendorDir . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToMany.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config->vendorDir .  '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/ManyToOne.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config->vendorDir . '/hirevoice/neo4jphp-ogm/lib/HireVoice/Neo4j/Annotation/Property.php');
+
+                /*
 
 		$metadataCacheClass = self::$cacheClassMap[$config['metaDataCache']];
 		$metadataCache = new $metadataCacheClass;
@@ -92,7 +97,6 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 		$reader = new \Doctrine\Common\Annotations\CachedReader(
 				new AnnotationReader, $metadataCache, false
 		);
-
 		$configuration = new \HireVoice\Neo4j\Configuration(array(
 			'host' => $config['host'],
 			'port' => $config['port'],
@@ -103,6 +107,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 			'annotationReader' => $reader
 		));
 
+                
 		$em = new \HireVoice\Neo4j\EntityManager($configuration);
 
 		$panel = $container->neo4j->panel;
@@ -110,7 +115,8 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 					$panel->addQuery($query, $parameters, $time);
 				});
 
-		return $em;
+		return $em;*/
+
 	}
 
 }
