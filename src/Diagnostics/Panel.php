@@ -9,7 +9,7 @@
 namespace izytechAB\neo4j\Diagnostics;
 
 use Everyman\Neo4j\Query;
-use HireVoice\Neo4j;
+use izytechAB\Neo4j;
 use Nette;
 use Tracy;
 
@@ -142,8 +142,8 @@ class Panel implements \Tracy\IBarPanel
 	public static function register()
 	{
 		$panel = new static();
-		Debugger::$blueScreen->addPanel(array($panel, 'renderException'));
-		Debugger::$bar->addPanel($panel);
+                \Tracy\Debugger::getBlueScreen()->addPanel(array($panel, 'renderException'));
+                \Tracy\Debugger::getBar()->addPanel($panel);
 		return $panel;
 	}
 
