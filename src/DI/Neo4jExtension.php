@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace izytechAB\neo4j\DI;
+namespace izytechAB\Neo4jNetteExtension\DI;
 
 use \Nette\DI\CompilerExtension;
 
@@ -77,7 +77,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
              * @todo >setFactory($this->prefix('@entityManager'));
              */
             $builder->addDefinition($this->prefix('panel'))
-                    ->setFactory('\izytechAB\neo4j\Diagnostics\Panel::register');
+                    ->setFactory('\izytechAB\Neo4jNetteExtension\Diagnostics\Panel::register');
 
     }
 
@@ -128,9 +128,11 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         $entityManager->setEventManager($eventManager);
 
         
-        $listener = new \Model\Graph\EventListner();
+        $listener = new  \izytechAB\Neo4jNetteExtension\Events\EventListner();
         
-
+        $eventManager->addEventListener(['prePersist'], $listener);
+        
+        $eventManager->dispatchEvent('prePersist');
     
         /**
          * QD must be other way to fetch prefix
@@ -148,9 +150,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         //$eventManager->addEventSubscriber('QueryRunEvent',function($query, $parameters, $time)use($panel){$panel->addQuery($query, $parameters, $time);});
         
         
-        $eventManager->addEventListener(['prePersist'], $listener);
-        
-        $entityManager->eventManager->dispatchEvent('prePersist');
+     
         
         return $entityManager;
 

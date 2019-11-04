@@ -6,7 +6,7 @@
  */
 
 //namespace Bazo\Extensions\Neo4j\Diagnostics;
-namespace izytechAB\neo4j\Diagnostics;
+namespace izytechAB\Neo4jNetteExtension\Diagnostics;
 
 use Everyman\Neo4j\Query;
 use izytechAB\Neo4j;

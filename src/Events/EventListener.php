@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Copyright (C) 2019 Thomas Alatalo Berg <thomas@izytech.se>
  *
@@ -17,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace izytechAB\neo4j\Events;
+namespace izytechAB\Neo4jNetteExtension\Events;
 
 use izytechAB\Neo4j\Event as Events;
 
