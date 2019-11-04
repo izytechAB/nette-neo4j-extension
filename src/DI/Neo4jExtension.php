@@ -65,19 +65,19 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
                             ->setAutowired(FALSE);
             
             $builder->addDefinition($this->prefix('entityManager'))
-                            ->setClass('\izytechAB\Neo4j\EntityManager')
+                            ->setClass('izytechAB\Neo4j\EntityManager')
                             ->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config])
                             ->setAutowired(FALSE);
 
             $builder->addDefinition('entityManager')
-                            ->setClass('\izytechAB\Neo4j\EntityManager')
+                            ->setClass('izytechAB\Neo4j\EntityManager')
                             ->setFactory('@container::getService', array($this->prefix('entityManager')));
             
             /**
              * @todo >setFactory($this->prefix('@entityManager'));
              */
-            $builder->addDefinition($this->prefix('panel'))
-                    ->setFactory('\izytechAB\Nette\Extensions\Neo4j\Panel::register');
+            //$builder->addDefinition($this->prefix('panel'))
+            //        ->setFactory('izytechAB\Nette\Extensions\Neo4j\Panel::register');
 
     }
 
@@ -137,7 +137,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         /**
          * QD must be other way to fetch prefix
          */
-        $panel = $container->getService($config['prefix']."panel");
+       // $panel = $container->getService($config['prefix']."panel");
         
         
         /**
