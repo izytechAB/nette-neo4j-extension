@@ -8,6 +8,7 @@ use \Nette\DI\CompilerExtension;
 use \Doctrine\Common\Annotations\AnnotationReader;
 use \Doctrine\Common\EventManager;
 
+use izytechAB\Nette\Extensions\Neo4j\Events\EventListner;
 
 
 /**
