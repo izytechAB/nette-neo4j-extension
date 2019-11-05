@@ -9,11 +9,17 @@ class ComposerStaticInitbb93765d8d60e6b79d2c61365c706ef1
     public static $prefixesPsr0 = array (
         'i' => 
         array (
-            'izytechAB\\Nette\\Extensions\\Neo4j\\' => 
+            'izytechAB\\Nette\\Extensions\\Neo4j\\Events\\' => 
+            array (
+                0 => __DIR__ . '/../..' . '/src/Events',
+            ),
+            'izytechAB\\Nette\\Extensions\\Neo4j\\Diagnostics\\' => 
+            array (
+                0 => __DIR__ . '/../..' . '/src/Diagnostics',
+            ),
+            'izytechAB\\Nette\\Extensions\\Neo4j\\DI\\' => 
             array (
                 0 => __DIR__ . '/../..' . '/src/DI',
-                1 => __DIR__ . '/../..' . '/src/Diagnostics',
-                2 => __DIR__ . '/../..' . '/src/Events',
             ),
         ),
     );
