@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace izytechAB\Nette\Extensions\Neo4j\Events;
+namespace izytechab\Nette\Extensions\Neo4j\Events;
 
 use izytechAB\Neo4j\Event as Events;
 
