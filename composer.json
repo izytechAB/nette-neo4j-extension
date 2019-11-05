@@ -15,7 +15,7 @@
         "izytechab/neo4jphp-ogm": "*"
     },
     "autoload": {
-        "psr-4": {"izytechAB\\Nette\\Extensions\\Neo4j\\":"src/" }
+        "psr-4": {"\\izytechAB\\Nette\\Extensions\\Neo4j\\":"src/" }
 
     }
 }

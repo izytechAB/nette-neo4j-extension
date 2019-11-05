@@ -8,6 +8,9 @@ use \Nette\DI\CompilerExtension;
 use \Doctrine\Common\Annotations\AnnotationReader;
 use \Doctrine\Common\EventManager;
 
+use izytechAB\Nette\Extensions\Neo4j\Events\EventListner;
+
+
 /**
  * Description of Neo4jExtension
  * 
@@ -130,7 +133,8 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         $entityManager->setEventManager($eventManager);
 
         
-        $listener = new  \izytechAB\Nette\Extensions\Neo4j\Events\EventListner();
+        
+       // $listener = new \izytechAB\Nette\Extensions\Neo4j\Events\EventListner($container);
         
         //$eventManager->addEventListener(['prePersist'], $listener);
         
