@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace izytechab\Nette\Extensions\Neo4j\DI;
+namespace izytechAB\Nette\Extensions\Neo4j\DI;
 
 use \Nette\DI\CompilerExtension;
 
