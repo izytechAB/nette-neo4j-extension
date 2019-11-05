@@ -133,7 +133,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
         
         
-        //$listener = new \izytechAB\Nette\Extensions\Neo4j\Events\EventListner($container);
+        $listener = new EventListner($container);
                 
         
         //$eventManager->addEventListener(['prePersist'], $listener);
