@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "izytechAB\\Nette\\Extensions\\Neo4j\\": "src/"
+            "IzytechAB\\Nette\\Extensions\\Neo4j": "src/"
         }
     }
 
