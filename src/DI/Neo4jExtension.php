@@ -61,12 +61,14 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
             $builder->addDefinition($this->prefix('client'))
                             ->setClass('\Everyman\Neo4j\Client')
-                            ->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config])
+                            //->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config])
+                            ->setFactory('izytechAB\Nette\Extensions\Neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config])
                             ->setAutowired(FALSE);
             
             $builder->addDefinition($this->prefix('entityManager'))
                             ->setClass('izytechAB\Neo4j\EntityManager')
-                            ->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config])
+                            //->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config])
+                            ->setFactory('izytechAB\Nette\Extensions\Neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config])
                             ->setAutowired(FALSE);
 
             $builder->addDefinition('entityManager')
@@ -128,11 +130,11 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         $entityManager->setEventManager($eventManager);
 
         
-        $listener = new  \izytechAB\Neo4jNetteExtension\Events\EventListner();
+        $listener = new  \izytechAB\Nette\Extensions\Neo4j\Events\EventListner();
         
-        $eventManager->addEventListener(['prePersist'], $listener);
+        //$eventManager->addEventListener(['prePersist'], $listener);
         
-        $eventManager->dispatchEvent('prePersist');
+       // $eventManager->dispatchEvent('prePersist');
     
         /**
          * QD must be other way to fetch prefix
