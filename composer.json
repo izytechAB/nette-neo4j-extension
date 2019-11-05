@@ -15,7 +15,12 @@
         "izytechab/neo4jphp-ogm": "*"
     },
     "autoload": {
-        "psr-4": {"izytechAB\\Nette\\Extensions\\Neo4j\\":"src/" }
+        "psr-4": {
+            "izytechAB\\Nette\\Extensions\\Neo4j\\DI\\":"src//DI",
+            "izytechAB\\Nette\\Extensions\\Neo4j\\Diagnostics\\":"src/Diagnostics/",
+            "izytechAB\\Nette\\Extensions\\Neo4j\\Events\\":"src/Events/"
+            
+        }
 
     }
 }

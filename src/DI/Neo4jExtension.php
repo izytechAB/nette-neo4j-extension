@@ -8,7 +8,6 @@ use \Nette\DI\CompilerExtension;
 use \Doctrine\Common\Annotations\AnnotationReader;
 use \Doctrine\Common\EventManager;
 
-use izytechAB\Nette\Extensions\Neo4j\Events\EventListner;
 
 
 /**
@@ -64,13 +63,11 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
             $builder->addDefinition($this->prefix('client'))
                             ->setClass('\Everyman\Neo4j\Client')
-                            //->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config])
                             ->setFactory('izytechAB\Nette\Extensions\Neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config])
                             ->setAutowired(FALSE);
             
             $builder->addDefinition($this->prefix('entityManager'))
                             ->setClass('izytechAB\Neo4j\EntityManager')
-                            //->setFactory('izytechAB\neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config])
                             ->setFactory('izytechAB\Nette\Extensions\Neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config])
                             ->setAutowired(FALSE);
 
@@ -81,8 +78,9 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
             /**
              * @todo >setFactory($this->prefix('@entityManager'));
              */
-            //$builder->addDefinition($this->prefix('panel'))
-            //        ->setFactory('izytechAB\Nette\Extensions\Neo4j\Panel::register');
+            $builder->addDefinition($this->prefix('panel'))
+                    ->setClass('izytechAB\Nette\Extensions\Neo4j\Diagnostics\Panel')
+                    ->setFactory('izytechAB\Nette\Extensions\Neo4j\Diagnostics\Panel::register');
 
     }
 
@@ -134,7 +132,8 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
         
         
-       // $listener = new \izytechAB\Nette\Extensions\Neo4j\Events\EventListner($container);
+        $listener = new \Events\EventListner($container);
+                
         
         //$eventManager->addEventListener(['prePersist'], $listener);
         
