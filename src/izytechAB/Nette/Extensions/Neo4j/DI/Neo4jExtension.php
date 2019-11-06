@@ -108,12 +108,12 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         /**
          * @todo Fix QD 
          */
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechAB/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Auto.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechAB/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Entity.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] .  '/izytechAB/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Index.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechAB/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/ManyToMany.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] .  '/izytechAB/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/ManyToOne.php');
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechAB/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Property.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Auto.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Entity.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] .  '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Index.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/ManyToMany.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] .  '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/ManyToOne.php');
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Property.php');
 
         
         
