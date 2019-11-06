@@ -79,9 +79,9 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
              */
             //$builder->addDefinition('entityManager')
             
-            $builder->addDefinition($this->prefix('entityManager'))
-                            ->setClass('izytechAB\Neo4j\EntityManager')
-                            ->setFactory('@container::getService', array($this->prefix('entityManager')));
+            //$builder->addDefinition($this->prefix('entityManager'))
+            //                ->setClass('izytechAB\Neo4j\EntityManager')
+            //                ->setFactory('@container::getService', array($this->prefix('entityManager')));
             
 
             $builder->addDefinition($this->prefix('panel'))
