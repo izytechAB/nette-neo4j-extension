@@ -26,7 +26,7 @@ use izytechAB\Neo4j\Event as Events;
  *
  * @author Thomas Alatalo Berg <thomas@izytech.se>
  */
-class EventListner {
+class Listner {
     
     protected $container;
     

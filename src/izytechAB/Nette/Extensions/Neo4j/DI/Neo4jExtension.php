@@ -64,13 +64,13 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
 
             $builder->addDefinition($this->prefix('client'))
                             ->setClass('\Everyman\Neo4j\Client')
-                            ->setFactory('izytechAB\Nette\Extensions\Neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config])
-                            ->setAutowired(FALSE);
+                            ->setFactory('izytechAB\Nette\Extensions\Neo4j\DI\Neo4jExtension::createNeo4jClient', ['@container', $config]);
+                            //->setAutowired(FALSE);
             
-            //$builder->addDefinition($this->prefix('entityManager'))
             $builder->addDefinition($this->prefix('entityManager'))
                             ->setClass('izytechAB\Neo4j\EntityManager')
                             ->setFactory('izytechAB\Nette\Extensions\Neo4j\DI\Neo4jExtension::createEntityManager', ['@container', $config]);
+                        
             
                             //->setAutowired(FALSE);
 
@@ -87,7 +87,12 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
             $builder->addDefinition($this->prefix('panel'))
                     ->setClass('izytechAB\Nette\Extensions\Neo4j\Diagnostics\Panel')
                     ->setFactory('izytechAB\Nette\Extensions\Neo4j\Diagnostics\Panel::register');
-
+            
+            $builder->addDefinition($this->prefix('events'))
+                    ->setClass('izytechAB\Nette\Extensions\Neo4j\Events\Listner');
+                    
+            
+            
     }
 
     public static function createNeo4jClient(\Nette\DI\Container $container, $config)
