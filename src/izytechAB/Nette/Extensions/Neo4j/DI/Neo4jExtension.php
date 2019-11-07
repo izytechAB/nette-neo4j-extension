@@ -136,50 +136,15 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         
         $eventManager = new EventManager();
 
-        $entityManager->setEventManager($eventManager);
-
-        
         
         $listener = new \izytechAB\Nette\Extensions\Neo4j\Events\Listner($container);
-                
         
-        $eventManager->addEventListener(['PreStmtExecute'], $listener);
         $eventManager->addEventListener(['prePersist'], $listener);
 
-        /**
-         * QD must be other way to fetch prefix
-         */
-       // $panel = $container->getService($config['prefix']."panel");
-        
-        
-        /**
-         * @todo fix event registrarion for query -> panel
-         */
-        //$em->registerEvent('\HireVoice\Neo4j\EntityManager::QueryRunEvent'  , function($query, $parameters, $time)use($panel) {
-        //                        $panel->addQuery($query, $parameters, $time);
-        //});
-        
-        //$eventManager->addEventSubscriber('QueryRunEvent',function($query, $parameters, $time)use($panel){$panel->addQuery($query, $parameters, $time);});
-        
-        
-     
+        $entityManager->setEventManager($eventManager);
         
         return $entityManager;
 
     }
 
-}
-
- /*
-        $eventManager->addEventListener(['PrePersist'], $listener);
-        
-        print_r($eventManager->getListeners());
-        
-        echo "listerner registrerd yes\n";
-        */
-    
-        //$em->eventManager->addEventListener([\HireVoice\Neo4j\Event], $listener);
-
-       // print_r($em->eventManager->getListeners());
-        
-        
+}        

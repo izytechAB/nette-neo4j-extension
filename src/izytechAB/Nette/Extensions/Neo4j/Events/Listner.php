@@ -38,19 +38,11 @@ class Listner {
     public function prePersist(Events\PrePersist $event)
     {
         
-        \Tracy\Debugger::barDump('dummy test');
-        \Tracy\Debugger::barDump($event);
+        \Tracy\Debugger::barDump($event->entity->createGlobalSearch());
         
         return null;
     }
     
-    public function PreStmtExecute($param) 
-    {
-     
-        \Tracy\Debugger::barDump($param);
-        
-    }
-            //$eventManager->addEventSubscriber('QueryRunEvent',function($query, $parameters, $time)use($panel){$panel->addQuery($query, $parameters, $time);});
 
     
     
