@@ -146,7 +146,7 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         $eventManager->addEventListener(['prePersist'], $listener);
         $eventManager->addEventListener(['QueryRunEvent'], $listener);
         
-        //$eventManager->dispatchEvent('prePersist');
+        $eventManager->dispatchEvent('prePersist');
     
         /**
          * QD must be other way to fetch prefix
