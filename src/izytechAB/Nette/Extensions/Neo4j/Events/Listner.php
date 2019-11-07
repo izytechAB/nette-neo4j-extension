@@ -44,7 +44,7 @@ class Listner {
         return null;
     }
     
-    public function QueryRunEvent($param) 
+    public function PreStmtExecute($param) 
     {
      
         \Tracy\Debugger::barDump($param);
