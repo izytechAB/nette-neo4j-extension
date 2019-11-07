@@ -44,5 +44,16 @@ class Listner {
         return null;
     }
     
+    public function QueryRunEvent($param) 
+    {
+     
+        \Tracy\Debugger::barDump($param);
+        
+    }
+            //$eventManager->addEventSubscriber('QueryRunEvent',function($query, $parameters, $time)use($panel){$panel->addQuery($query, $parameters, $time);});
+
+    
+    
+    
     
 }

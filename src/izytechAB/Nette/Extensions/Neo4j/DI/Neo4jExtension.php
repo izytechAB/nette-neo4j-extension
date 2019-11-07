@@ -108,13 +108,13 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         /**
          * @todo Fix QD 
          */
-        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Auto.php');
+        /*\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Auto.php');
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Entity.php');
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] .  '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Index.php');
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/ManyToMany.php');
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] .  '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/ManyToOne.php');
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($config['vendorDir'] . '/izytechab/neo4jphp-ogm/lib/izytechAB/Neo4j/Annotation/Property.php');
-
+*/
         
         
         $metadataCacheClass = self::$cacheClassMap[$config['metaDataCache']];
@@ -146,7 +146,8 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         $listener = new \izytechAB\Nette\Extensions\Neo4j\Events\Listner($container);
                 
         
-        //$eventManager->addEventListener(['prePersist'], $listener);
+        $eventManager->addEventListener(['prePersist'], $listener);
+        $eventManager->addEventListener(['QueryRunEvent'], $listener);
         
         //$eventManager->dispatchEvent('prePersist');
     
