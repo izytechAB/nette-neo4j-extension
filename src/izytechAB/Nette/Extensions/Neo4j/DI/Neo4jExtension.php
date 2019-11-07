@@ -143,10 +143,9 @@ class Neo4jExtension extends \Nette\DI\CompilerExtension
         $listener = new \izytechAB\Nette\Extensions\Neo4j\Events\Listner($container);
                 
         
-        $eventManager->addEventListener(['prePersist'], $listener);
         $eventManager->addEventListener(['PreStmtExecute'], $listener);
-        
-        
+        $eventManager->addEventListener(['prePersist'], $listener);
+
         /**
          * QD must be other way to fetch prefix
          */
